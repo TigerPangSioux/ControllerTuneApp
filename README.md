@@ -9,4 +9,4 @@
 -->
 1. open ControllerTune.exe
 2. load example\Plant.fig
-3. load Feedbackparam_tunning.xml
+3. load example\Feedbackparam_tunning.xml
