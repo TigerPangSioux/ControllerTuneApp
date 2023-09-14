@@ -1,35 +1,81 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<!-- specify the index of individual SISO controller, controllers with excessive indices will be ignored -->
-<!-- filter: 1 = Not used, 2 = Low pass, 3 = High pass, 4 = (Skew) Notch -->
-
-<!-- Note: AxisTrans uses a SISO controller -->
 <Parameters>
-    <FeedBackController>
-        <PID1>
-            <Kp Value="45918"/>
-            <FrqI Value="25"/>
-            <FrqD Value="15"/>
-            <BetaD Value="0.1"/>
-        </PID1>
-        <PID2>
-            <Kp Value="1"/>
-            <FrqI Value="25"/>
-            <FrqD Value="15"/>
-            <BetaD Value="0.1"/>
-        </PID2>
-        <Filter1>
-            <Type Value="4"/>
-            <Frq0 Value="1035"/>
-            <Mag0 Value="20"/>
-            <Frq1 Value="1035"/>
-            <Mag1 Value="15"/>
-        </Filter1>
-        <Filter2>
-            <Type Value="4"/>
-            <Frq0 Value="1500"/>
-            <Mag0 Value="6"/>
-            <Frq1 Value="1500"/>
-            <Mag1 Value="1"/>
-        </Filter2>  
-    </FeedBackController>
+  <SecondPIDController>
+    <Kp Value="1"/>
+    <FrqI Value="10"/>
+    <FrqD Value="22"/>
+    <BetaD Value="0.1"/>
+    <ProportionalLimit Value="440"/>
+    <IntegralLimit Value="440"/>
+    <DifferentialLimit Value="440"/>
+  </SecondPIDController>
+  <FeedBackController>
+    <PID>
+      <Kp Value="500000"/>
+      <FrqI Value="10"/>
+      <FrqD Value="22"/>
+      <BetaD Value="0.1"/>
+      <ProportionalLimit Value="440"/>
+      <IntegralLimit Value="440"/>
+      <DifferentialLimit Value="440"/>
+    </PID>
+    <Filter1>
+      <Type Value="4"/>
+      <Frq0 Value="191"/>
+      <Mag0 Value="24"/>
+      <Frq1 Value="191"/>
+      <Mag1 Value="2"/>
+    </Filter1>
+    <Filter2>
+      <Type Value="4"/>
+      <Frq0 Value="267"/>
+      <Mag0 Value="16"/>
+      <Frq1 Value="267"/>
+      <Mag1 Value="5"/>
+    </Filter2>
+    <Filter3>
+      <Type Value="1"/>
+      <Frq0 Value="1412"/>
+      <Mag0 Value="20"/>
+      <Frq1 Value="1412"/>
+      <Mag1 Value="5"/>
+    </Filter3>
+    <Filter4>
+      <Type Value="4"/>
+      <Frq0 Value="418"/>
+      <Mag0 Value="12"/>
+      <Frq1 Value="432"/>
+      <Mag1 Value="2"/>
+    </Filter4>
+  </FeedBackController>
+  <FeedBackFilters>
+    <Filter5>
+      <Type Value="1"/>
+      <Frq0 Value="573"/>
+      <Mag0 Value="16"/>
+      <Frq1 Value="573"/>
+      <Mag1 Value="8"/>
+    </Filter5>
+    <Filter6>
+      <Type Value="1"/>
+      <Frq0 Value="0"/>
+      <Mag0 Value="0"/>
+      <Frq1 Value="0"/>
+      <Mag1 Value="0"/>
+    </Filter6>
+    <Filter7>
+      <Type Value="1"/>
+      <Frq0 Value="0"/>
+      <Mag0 Value="0"/>
+      <Frq1 Value="0"/>
+      <Mag1 Value="0"/>
+    </Filter7>
+    <Filter8>
+      <Type Value="1"/>
+      <Frq0 Value="0"/>
+      <Mag0 Value="0"/>
+      <Frq1 Value="0"/>
+      <Mag1 Value="0"/>
+    </Filter8>
+  </FeedBackFilters>
 </Parameters>
